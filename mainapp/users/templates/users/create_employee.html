@@ -1,0 +1,19 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+{% if perms.users.add_user %}
+<div class="content-section">
+  <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Register</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+  </form>
+</div>
+{% endif %}
+{% endblock %}
+
+<!--user.user_permissions.all()-->

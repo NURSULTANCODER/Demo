@@ -4,17 +4,21 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, FormView
+from django.contrib.auth.models import Group
 
 from .forms import UserRegistrationForm, LoginUserForm
 
 @login_required
-@permission_required('users.add_user')
+@permission_required('users.add_user', raise_exception=True)
 def regiser_user(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('users:login')
+            user = form.save(commit=False)
+            user.save()
+            group = form.cleaned_data['group']
+            user.groups.add(group)
+            return redirect('mainsite:home')
     else:
         form = UserRegistrationForm()
     return render(request, 'users/create_employee.html', {'form': form})

@@ -36,6 +36,6 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" > private_key
         chmod 600 private_key
-        scp -i private_key -o StrictHostKeyChecking=no -P $SSH_PORT deploy_script.sh $SSH_USER@$SSH_HOST:/tmp/deploy_script.sh
-        ssh -i private_key -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST 'bash /tmp/deploy_script.sh'
+        scp -i private_key -o StrictHostKeyChecking=no -P $SSH_PORT deploy_script.sh $SSH_USER@$SSH_HOST:deploy_script.sh
+        ssh -i private_key -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST 'bash deploy_script.sh'
         rm private_key

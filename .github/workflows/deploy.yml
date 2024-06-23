@@ -32,7 +32,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SSH_USER: ${{ secrets.SSH_USER }}
         SSH_HOST: ${{ secrets.SSh_HOST }}
-        SSH_PORT: 80
+        SSH_PORT: 22
       run: |
         echo "$SSH_PRIVATE_KEY" > private_key
         chmod 600 private_key

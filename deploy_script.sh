@@ -1,4 +1,4 @@
-cd /path/to/your/project
+cd /var/www/html/Prototip
 
 # Pull the latest changes from the repository
 git pull origin master

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fs@t$$#kcgmy*ok2orwyk!&9tdrm(^w+dvvqkdn9b=914_i+f4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['64.227.166.84', 'www.demo.demomicom.com', 'demo.demomicom.com']
 
 
 # Application definition
@@ -130,3 +130,6 @@ LOGIN_REDIRECT_URL = 'mainsite:home'
 LOGIN_URL = 'login'
 
 AUTH_USER_MODEL = 'users.User'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

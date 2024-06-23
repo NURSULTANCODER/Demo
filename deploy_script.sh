@@ -15,6 +15,9 @@ python manage.py migrate
 # Collect static files
 python manage.py collectstatic --noinput
 
+sudo chown -R www-data:www-data /var/www/html/Prototip/mainapp/staticfiles
+sudo chmod -R 755 /var/www/html/Prototip/mainapp/staticfiles
+
 # Restart the web server
 sudo systemctl restart apache2
 

@@ -1,9 +1,7 @@
-cd /var/www/html/Prototip
+cd /var/www/html/Prototip/mainapp
 
 # Pull the latest changes from the repository
 git pull origin master
-
-cd /var/www/html/Prototip/mainapp
 
 # Activate the virtual environment
 source venv/bin/activate

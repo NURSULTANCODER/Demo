@@ -5,13 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="{% static 'mainsite/main.css' %}">
-  <script src="{% static 'mainsite/main.js' %}"></script>
-  {% if title %}
-    <title>{{ title }}</title>
-  {% else %}
-    <title>Home</title>
-  {% endif %}
+  <link rel="stylesheet" href="{% static 'mainsite/css/main.css' %}">
+{#  <script src="{% static 'mainsite/main.js' %}"></script>#}
+    <title>Document</title>
 </head>
 <body>
 {% if user.is_authenticated %}

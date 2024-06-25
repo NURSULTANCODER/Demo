@@ -6,94 +6,168 @@ html, body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
+    justify-content: center;
     align-items: center;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+nav {
     background-color: #333;
     overflow: hidden;
+    height: 50px;
 }
 
-
-nav ul li {
-    float: right;
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 50px;
 }
 
+.left-side {
+    flex: none;
+}
 
-nav ul li a {
-    display: block;
+.right-side {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.nav-links li a {
     color: white;
-    text-align: center;
-    padding: 14px 20px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+}
+
+
+.site-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
     text-decoration: none;
 }
 
 
-nav ul li a:hover {
-    background-color: #555;
+
+.registration-form {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.registration-form legend {
+  font-size: 24px;
+  color: #333;
+}
+
+.registration-form fieldset {
+  border: none;
+}
+
+.registration-form .form-group {
+  margin-bottom: 20px;
+}
+
+.registration-form .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.registration-form .btn:hover {
+  background-color: #0056b3;
+}
+
+
 
 .login-container {
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .login-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+.login-form fieldset {
+  border: none;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.login-form legend {
+  font-size: 24px;
+  color: #333;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #666;
+.login-form .form-group {
+  margin-bottom: 15px;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.login-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
 }
 
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.login-form .form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+.login-form .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.login-form .btn-primary:hover {
+  background-color: #0056b3;
 }
 
 
 
 .user-list-container {
     width: 80%;
-    max-width: 600px;
+    max-width: 1000px;
     margin: 20px auto;
     background-color: #fff;
     border-radius: 8px;
@@ -130,6 +204,13 @@ button[type="submit"]:hover {
     background-color: #f9f9f9;
 }
 
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
 
 .user-details {
     flex-grow: 1;
@@ -145,4 +226,192 @@ button[type="submit"]:hover {
     margin: 5px 0 0 0;
     font-size: 14px;
     color: #777;
+}
+
+.user-rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    --rating: 0;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    unicode-bidi: bidi-override;
+    color: #ffd700;
+    padding: 0;
+    margin: 0;
+}
+
+.stars::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #ffd700 var(--rating), #ccc var(--rating));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.stars::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #ffd700 calc(var(--rating) * 20%), #ccc calc(var(--rating) * 20%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.profile-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-header h1 {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.profile-header p {
+    font-size: 14px;
+    color: #777;
+}
+
+.profile-rating {
+    margin-top: 10px;
+}
+
+
+
+.reviews-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.reviews-container h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.review-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.review-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    font-size: 18px;
+    color: #333;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #777;
+}
+
+.review-content {
+    font-size: 16px;
+    color: #555;
+}
+
+
+.review-create-container {
+    max-width: 600px;
+}
+
+.review-create-container h2 {
+    color: #333;
+}
+
+.review-create-container form {
+    background-color: #f8f9fa;
+}
+
+.review-create-container .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.review-create-container .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.review-create-container .form-control {
+    margin-bottom: 1rem;
+}
+
+.container {
+    text-align: center;
+}
+
+.error-content {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-content h1 {
+    font-size: 96px;
+    margin: 0;
+    color: #e74c3c;
+}
+
+.error-content p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #3498db;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #2980b9;
 }

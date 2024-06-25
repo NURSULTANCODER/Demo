@@ -1,0 +1,23 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+    <div class="reviews-container">
+        <h2>Reviews for {{ user.username }}</h2>
+        {% if reviews %}
+            <ul class="review-list">
+                {% for review in reviews %}
+                    <li class="review-item">
+                        <div class="review-header">
+                            <div class="stars" style="--rating: {{ user.profile.grade }}"><span style="color: black">{{ user.profile.grade }}</span></div>
+                            <span class="review-date">{{ review.date_posted }}</span>
+                        </div>
+                        <div class="review-content">
+                            {{ review.content }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No reviews yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}

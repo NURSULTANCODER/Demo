@@ -3,16 +3,16 @@
 {% if user.is_authenticated %}
 No
 {% else %}
-<div class="content-section">
-  <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Welcome back!</legend>
-            {{ form.as_p }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Log In</button>
-        </div>
+<div class="login-container">
+  <form method="POST" class="login-form">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Login</legend>
+      {{ form.as_p }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit">Log In</button>
+    </div>
   </form>
 </div>
 {% endif %}

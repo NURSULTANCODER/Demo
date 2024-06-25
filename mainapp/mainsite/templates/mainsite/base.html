@@ -10,9 +10,30 @@
     <title>Document</title>
 </head>
 <body>
-{% if user.is_authenticated %}
-<p>Hi</p>
-{% endif %}
+      <nav>
+          <div class="navbar-container">
+              <div class="left-side">
+                  <a href="/" class="site-name">Tyiyn Jok</a>
+              </div>
+              <div class="right-side">
+                  <ul class="nav-links">
+                      <li><a href="{% url 'mainsite:home' %}">Home</a></li>
+                      <li><a href="{% url 'mainsite:home' %}">Services</a></li>
+                      <li><a href="{% url 'mainsite:home' %}">Contact</a></li>
+                      {% if user.is_authenticated %}
+                          {% if perms.users.add_user %}
+                              <li><a href="{% url 'users:register-user' %}">Register User</a></li>
+                              <li><a href="{% url 'users:users-list' %}">See all employees</a></li>
+                          {% endif %}
+                          <li><a href="{% url 'users:profile' user.username %}">Profile</a></li>
+                          <li><a href="{% url 'users:logout' %}">Logout</a></li>
+                      {% else %}
+                          <li><a href="{% url 'users:login' %}">Login</a></li>
+                      {% endif %}
+                  </ul>
+              </div>
+          </div>
+      </nav>
     {% block content %}
     {% endblock %}
 </body>

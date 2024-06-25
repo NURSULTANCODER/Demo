@@ -1,0 +1,19 @@
+{% extends 'mainsite/base.html' %}
+{% load custom_filters %}
+{% block content %}
+<div class="review-create-container mt-5">
+  <h2 class="text-center mb-4">Create a Review for {{ employee.username }}</h2>
+  <form method="post" class="p-4 border rounded bg-white shadow-sm">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.rating.id_for_label }}">Rating:</label>
+      {{ form.rating|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.content.id_for_label }}">Content:</label>
+      {{ form.content|add_class:"form-control" }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+  </form>
+</div>
+{% endblock %}

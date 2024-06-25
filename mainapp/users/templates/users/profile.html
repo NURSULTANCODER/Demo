@@ -1,0 +1,18 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{ user.profile.image.url }}" alt="Profile Picture" class="profile-picture">
+            <h1>{{ user.username }}</h1>
+            <p>{{ user.email }}</p>
+            <div class="profile-rating">
+                <div class="stars" style="--rating: {{ user.profile.grade }}"></div>{{ user.profile.grade }}
+            </div>
+            <p><a href="{% url 'users:user_reviews' user.username %}">View Reviews</a></p>
+            {% if perms.users.add_user %}
+                <p><a href="{% url 'users:create-review' user.username %}">Create Review</a></p>
+            {% endif %}
+            <p><a href="{% url 'users:profile-update' user.username %}">Update</a></p>
+        </div>
+    </div>
+{% endblock %}

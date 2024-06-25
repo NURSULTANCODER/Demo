@@ -1,0 +1,11 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="error-content">
+            <h1>403</h1>
+            <p>Forbidden</p>
+            <p>Sorry, you don't have permission to access this page.</p>
+            <a href="{% url 'mainsite:home' %}" class="home-button">Return to Home</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+    <div class="user-list-container">
+        <h1>User list</h1>
+        <ul class="user-list">
+            {% if perms.users.add_user %}
+                {% for user in users %}
+                    <li class="user-item">
+                        <img src="{{ user.profile.image.url }}" alt="User" class="user-avatar">
+                        <div class="user-details">
+                            <div class="media-body">
+                                <a class="user-name" href="{% url 'users:profile' user.username %}">{{ user.username }}</a>
+                                <p class="user-email">{{ user.email }}</p>
+                                <div class="user-rating">
+                                    <div class="stars" style="--rating: {{ user.profile.grade }}"></div>{{ user.profile.grade }}
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'users:user-delete' user.username %}">Delete</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}
+

@@ -36,8 +36,8 @@ class Review(models.Model):
         if reviews.exists():
             total_rating = sum(review.rating for review in reviews)
             average_rating = total_rating / reviews.count()
-            self.employee.grade = round(average_rating, 1)
-            self.employee.save()
+            self.employee.profile.grade = round(average_rating, 1)
+            self.employee.profile.save()
 
     def get_absolute_url(self):
         return reverse('users:profile', kwargs={'username': self.employee.username})

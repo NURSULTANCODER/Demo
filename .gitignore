@@ -1,3 +1,4 @@
 mainapp/venv
 .idea
 __pycache__
+mainapp/db.sqlite3

@@ -1,7 +1,9 @@
-cd /var/www/html/Prototip/mainapp
+cd /var/www/html/Prototip/
 
 # Pull the latest changes from the repository
-git pull origin master
+sudo git pull origin master
+
+cd /var/www/html/Prototip/mainapp
 
 # Activate the virtual environment
 source venv/bin/activate
@@ -19,6 +21,7 @@ python manage.py collectstatic --noinput
 sudo chown -R www-data:www-data /var/www/html/Prototip/mainapp/staticfiles
 sudo chmod -R 755 /var/www/html/Prototip/mainapp/staticfiles
 
+rm private_key
 # Restart the web server
 sudo systemctl restart apache2
 

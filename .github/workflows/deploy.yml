@@ -38,4 +38,4 @@ jobs:
         chmod 600 private_key
         scp -i private_key -o StrictHostKeyChecking=no -P $SSH_PORT deploy_script.sh $SSH_USER@$SSH_HOST:/var/www/html/Prototip/deploy_script.sh
         ssh -i private_key -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST 'bash /var/www/html/Prototip/deploy_script.sh'
-        rm private_key
+        

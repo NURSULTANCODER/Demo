@@ -7,7 +7,7 @@
                 {% for review in reviews %}
                     <li class="review-item">
                         <div class="review-header">
-                            <div class="stars" style="--rating: {{ user.profile.grade }}"><span style="color: black">{{ user.profile.grade }}</span></div>
+                            <div class="stars" style="--rating: {{ review.rating }}"><span style="color: black">{{ review.rating }}</span></div>
                             <span class="review-date">{{ review.date_posted }}</span>
                         </div>
                         <div class="review-content">
